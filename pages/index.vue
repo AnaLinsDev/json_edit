@@ -1,8 +1,8 @@
 <template>
   <v-row class="ma-auto screen" justify="center">
-    <Board />
-    <Monitor />
-    <Board />
+    <Board :isMobile="isMobile" />
+    <Monitor :isMobile="isMobile" />
+    <Board :isMobile="isMobile" />
   </v-row>
 </template>
 
@@ -12,13 +12,19 @@ import Monitor from "@/components/Monitor.vue";
 
 export default {
   name: "IndexPage",
-  components: [Board, Monitor],
+  components: { Board, Monitor },
+
+  computed: {
+    isMobile() {
+      return this.$vuetify.breakpoint.mdAndDown;
+    },
+  },
 };
 </script>
 
 <style scoped>
 .screen {
   margin: auto !important;
-width: 90vw !important;
+  width: 90vw !important;
 }
 </style>
