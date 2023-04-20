@@ -19,6 +19,6 @@ export default {
 
 <style>
 main {
-  background-color: rgba(141, 203, 96, 0.55) !important;
+  background-color: rgba(93, 162, 44, 0.702) !important;
 }
 </style>

@@ -9,8 +9,8 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - json_edit',
-    title: 'json_edit',
+    titleTemplate: 'Json Converter',
+    title: 'json_converter',
     htmlAttrs: {
       lang: 'en'
     },

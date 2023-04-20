@@ -1,16 +1,30 @@
 <template>
-  <v-col :cols="logicSize" :class="logicSize === 0 ? 'd-none' : ''">
-    <v-card height="calc(100vh - 60px)" class="pa-0" elevation="0">
-      <v-app-bar elevation="0">
+  <v-col
+    :cols="logicSize"
+    :class="
+      logicSize === 0
+        ? 'd-none'
+        : isMobile && isJson && !showOnlyJsonResult
+        ? 'mt-6'
+        : 0
+    "
+  >
+    <v-card
+      height="calc(100vh - 60px)"
+      class="pa-0"
+      :class="isMobile && isJson && !showOnlyJsonResult ? 'mt-6' : 0"
+      elevation="0"
+    >
+      <v-app-bar elevation="0" height="auto">
         <div v-if="isJson" class="header_json d-flex justify-space-between">
           <span class="d-flex">
-            <h2>Json {{ typeArray[currentType] }}</h2>
+            <h2 class="mt-2">Json {{ typeArray[currentType] }}</h2>
 
             <v-tooltip bottom v-if="currentType === 1">
               <template v-slot:activator="{ on, attrs }">
                 <v-icon
                   color="info"
-                  class="ml-4 mb-3"
+                  class="ml-4 mb-0"
                   dark
                   v-bind="attrs"
                   v-on="on"
@@ -39,7 +53,7 @@
           </v-btn>
         </div>
 
-        <div v-else class="header_json d-flex justify-space-between">
+        <div v-else class="header_json d-flex justify-space-between flex-wrap">
           <v-btn-toggle
             v-model="currentTypeAux"
             color="deep-purple-accent-3"
@@ -56,7 +70,9 @@
             </v-btn>
           </v-btn-toggle>
 
-          <v-btn @click="generateJson" color="success"> Generate Json </v-btn>
+          <v-btn @click="generateJson" color="success" class="my-2">
+            Generate Json
+          </v-btn>
         </div>
       </v-app-bar>
 

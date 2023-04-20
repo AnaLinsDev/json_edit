@@ -1,6 +1,7 @@
 <template>
   <v-row class="ma-auto screen" justify="center">
     <Board :isMobile="isMobile" />
+    <v-spacer></v-spacer>
     <Board :isMobile="isMobile" :isJson="true" />
   </v-row>
 </template>
