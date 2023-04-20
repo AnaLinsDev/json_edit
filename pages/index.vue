@@ -1,18 +1,16 @@
 <template>
   <v-row class="ma-auto screen" justify="center">
     <Board :isMobile="isMobile" />
-    <Monitor :isMobile="isMobile" />
-    <Board :isMobile="isMobile" />
+    <Board :isMobile="isMobile" :isJson="true" />
   </v-row>
 </template>
 
 <script>
 import Board from "@/components/Board.vue";
-import Monitor from "@/components/Monitor.vue";
 
 export default {
   name: "IndexPage",
-  components: { Board, Monitor },
+  components: { Board },
 
   computed: {
     isMobile() {
